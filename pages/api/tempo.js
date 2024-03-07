@@ -4,7 +4,9 @@ async function tempo(request, response) {
 
     const pokemonResponse = await fetch(`${apiSecret}`);
     const pokemonResponseJson = await pokemonResponse.json();
-    const pokemonName = pokemonResponseJson.results[0].name
+    const pokemonName = pokemonResponseJson.results[0].name;
+
+    response.setHeader('Cache-Control', 's-maxage=10, stale-while-revalidate');
 
     response.json({
         date: dynamicDate.toGMTString(),
