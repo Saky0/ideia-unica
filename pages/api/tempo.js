@@ -10,6 +10,6 @@ async function tempo(request, response) {
         date: dynamicDate.toGMTString(),
         pokemonName: pokemonName
     })
-}
+} 
 
 export default tempo;
