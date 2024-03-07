@@ -17,7 +17,10 @@ export function getStaticProps() {
     const staticDateString = staticDate.toGMTString();  
 
     return {
-        props: {staticDateString}
+        props: {
+            staticDateString
+        },
+        revalidate: 1
     }
 }
 
